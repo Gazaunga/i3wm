@@ -17,10 +17,10 @@ LAT="${LONGLAT[0]}"
 LON="${LONGLAT[1]}"
 
 # Open Weather Map API code, register to http://openweathermap.org to get one ;)
-API_KEY="365a6f3a274bba21cabdbee0aa44e99f"
+API_KEY="d2e2e16d4a29f03246c9d1e744ee38de"
 
 # Check on http://openweathermap.org/find
-CITY_ID="3448439" # São Paulo
+CITY_ID="4347778" # Baltimore
 
 ICON_SUNNY="  Clear"
 ICON_CLOUDY="  Cloudy"
@@ -37,7 +37,7 @@ TEXT_STORM="Storm"
 TEXT_SNOW="Snow"
 TEXT_FOG="Fog"
 
-SYMBOL_CELSIUS=" °C"
+SYMBOL_CELSIUS=" °F"
 
 WEATHER_URL="http://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&appid=${API_KEY}&units=metric"
 #WEATHER_URL="http://api.openweathermap.org/data/2.5/weather?id=${CITY_ID}&appid=${API_KEY}&units=metric"
