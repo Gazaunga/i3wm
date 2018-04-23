@@ -329,6 +329,11 @@ bindsym  $ALT+Escape        exec  $TERMINAL -e htop
 ## WINDOW LOCATIONS ##
 #assign [class="Firefox"] $ws2
 
+exec_always --no-startup-id ~/bin/polybar.sh
+exec        --no-startup-id xset r rate 280 40
+exec        --no-startup-id dunst
+exec        --no-startup-id compton
+
 #bar {
 #i3bar_command i3bar -t
 #status_command i3status
