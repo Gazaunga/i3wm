@@ -1,3 +1,136 @@
+#    _ _____                     _____      
+#   (_)__  /   _________  ____  / __(_)___ _
+#  / / /_ <   / ___/ __ \/ __ \/ /_/ / __ `/
+# / /___/ /  / /__/ /_/ / / / / __/ / /_/ /
+#/_//____/   \___/\____/_/ /_/_/ /_/\__, /  
+#                                  /____/   
+
+## MODKEYS ##
+
+set  $ALT              Mod1
+set  $CAPS             Mod3
+set  $CONTROL_R        Mod3
+set  $SUPER            Mod4
+
+## ENVs ##
+
+set $TERMINAL xterm
+set $EDITOR emacs
+set $SCRIPT_DIR $HOME/bin
+set $BROWSER qutebrowser
+set $ALT_BROWSER firefox
+
+## FONTS ##
+font -misc-ubuntu-medium-r-normal-*-0-0-0-0-p-0-iso10646-1
+## font -Wuncon-Siji-Medium-R-Normal--10-100-75-75-C-80-ISO10646-1
+## font pango:FontAwesome, xft:hermit 8
+
+## KEYBINDINGS ##
+
+# Use Mouse+$SUPER to drag floating windows to their wanted position
+floating_modifier $SUPER
+
+# kill focused window
+bindsym $ALT+Shift+Q kill
+
+# start a terminal
+bindsym  $ALT+Return    exec  $TERMINAL
+
+# start a program launcher
+bindsym $ALT+d exec j4-dmenu-desktop --dmenu="dmenu -i -fn 'fira-10' -l 10"
+bindsym $ALT+Shift+d exec bash ~/bin/rofi-apps
+
+# dropdown terminal
+bindsym $ALT+p exec tdrop -a -w 2144 -h 400 -x 8 -y 990 urxvt
+
+# emulate mouse (requires xdotool):
+bindsym  $SUPER+h            exec  --no-startup-id  xdotool   mousemove_relative  --         -20     0
+bindsym  $SUPER+j            exec  --no-startup-id  xdotool   mousemove_relative  0          20
+bindsym  $SUPER+k            exec  --no-startup-id  xdotool   mousemove_relative  --         0       -20
+bindsym  $SUPER+l            exec  --no-startup-id  xdotool   mousemove_relative  20         0
+bindsym  $SUPER+space        exec  --no-startup-id  xdotool   click               1          #       left    click
+bindsym  $CAPS+space       exec  --no-startup-id  xdotool   click               2          #       middle  click
+
+bindsym  $ALT+Shift+space  exec  --no-startup-id  xdotool   click               3          #       right   click
+
+# emulate pok3r:
+bindcode  --release  $CAPS+$DEAD_CIRCUMFLEX  exec  --no-startup-id  xdotool  key  `
+bindsym   --release  $CAPS+h                 exec  --no-startup-id  xdotool  key  Left
+bindsym   --release  $CAPS+j                 exec  --no-startup-id  xdotool  key  Down
+bindsym   --release  $CAPS+k                 exec  --no-startup-id  xdotool  key  Up
+bindsym   --release  $CAPS+l                 exec  --no-startup-id  xdotool  key  Right
+bindsym   --release  $CAPS+'                 exec  --no-startup-id  xdotool  key  Delete
+
+# change focus
+bindsym  $ALT+h  focus  left
+bindsym  $ALT+j  focus  down
+bindsym  $ALT+k  focus  up
+bindsym  $ALT+l  focus  right
+
+# alternatively, you can use the cursor keys:
+bindsym  $ALT+Left   focus  left
+bindsym  $ALT+Down   focus  down
+bindsym  $ALT+Up     focus  up
+bindsym  $ALT+Right  focus  right
+
+# move focused window
+bindsym  $ALT+Shift+H  move  left
+bindsym  $ALT+Shift+J  move  down
+bindsym  $ALT+Shift+K  move  up
+bindsym  $ALT+Shift+L  move  right
+
+# alternatively, you can use the cursor keys:
+bindsym  $ALT+Shift+Left   move  left
+bindsym  $ALT+Shift+Down   move  down
+bindsym  $ALT+Shift+Up     move  up
+bindsym  $ALT+Shift+Right  move  right
+
+## Layout/Focus
+
+# split in horizontal orientation
+bindsym $SUPER+b split h
+
+# split in vertical orientation
+bindsym $SUPER+v split v
+
+# Change container layout to stacked | tabbed | toggle split
+bindsym $SUPER+s layout stacking
+bindsym $SUPER+w layout tabbed
+bindsym $SUPER+e layout default
+
+# toggle tiling / floating
+bindsym $SUPER+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $SUPER+space focus mode_toggle
+
+# focus the parent container
+bindsym $SUPER+a focus parent
+
+# focus the child container
+bindsym $SUPER+y focus child
+
+# mouse settings
+# The middle button over a titlebar kills the window
+# bindsym --release button2 kill
+
+# The right button toggles floating
+# bindsym button3 floating toggle
+# bindsym $ALT+button3 floating toggle
+
+# The side buttons move the window around
+# bindsym button9 move left
+# bindsym button8 move right
+
+## WORKSPACE RULES ##
+
+#set $ws1 "&#xf120;"
+#set $ws2 "&#xf115;"
+#set $ws3 "&#xf269;"
+#set $ws4 "&#xf1bc;"
+#set $ws5 "&#xf1e2;"
+#http://fontawesome.io/cheatsheet/
+
 # ws names
 set $ws1 1:>_
 set $ws2 2:WWW
@@ -34,9 +167,171 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# Go to workspace
+bindsym $ALT+1 workspace $ws1
+bindsym $ALT+2 workspace $ws2
+bindsym $ALT+3 workspace $ws3
+bindsym $ALT+4 workspace $ws4
+bindsym $ALT+5 workspace $ws5
+
+# Move focused container to workspace
+bindsym $ALT+Shift+1 move container to workspace $ws1
+bindsym $ALT+Shift+2 move container to workspace $ws2
+bindsym $ALT+Shift+3 move container to workspace $ws3
+bindsym $ALT+Shift+4 move container to workspace $ws4
+bindsym $ALT+Shift+5 move container to workspace $ws5
+
+#navigate workspaces next / previous
+bindsym $ALT+Ctrl+Right workspace next
+bindsym $ALT+Ctrl+Left workspace prev
+
+# orientation for new workspaces
+default_orientation horizontal
+
+#for_window [ workspace="1" ] floating enable
+#2
+#3
+#for_window [ workspace="4" ] # PUT IT IN MONOCLE/FULLSCREEN
+#5
+
+#Popups during fullscreen mode
+popup_during_fullscreen smart
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+for_window [window_role="^Preferences$"] floating enable
+for_window [window_role="setup"] floating enable
+
+## SYSTEM ##
+
+# reload the configuration file
+bindsym $SUPER+Shift+C reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $SUPER+Shift+R restart
+
+# exit i3 (logs you out of your X session)
+bindsym $ALT+ctrl+Delete exit
+
+# add shutdown
+
+# name workspace
+bindsym $SUPER+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
+
+bindsym $SUPER+Shift+e exec "i3-nagbar -t warning -m 'Power off:' -b 'Sleep (RAM)' 'exec sudo pm-suspend' -b 'Sleep (HDD)' 'exec sudo pm-hibernate' -b 'Exit i3' 'i3-msg exit' -b 'Reboot' 'exec reboot' -b 'Shutdown' 'exec sudo shutdown now'"
+
+## MODES ##
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+  # These bindings trigger as soon as you enter the resize mode
+
+  # Pressing left will shrink the windows width.
+  # Pressing right will grow the windows width.
+  # Pressing up will shrink the windows height.
+  # Pressing down will grow the windows height.
+  bindsym  h  resize  shrink  width   10  px  or  10  ppt
+  bindsym  j  resize  grow    height  10  px  or  10  ppt
+  bindsym  k  resize  shrink  height  10  px  or  10  ppt
+  bindsym  l  resize  grow    width   10  px  or  10  ppt
+
+  # same bindings, but for the arrow keys
+  bindsym  113  resize  shrink  width   10  px  or  10  ppt
+  bindsym  116  resize  grow    height  10  px  or  10  ppt
+  bindsym  111  resize  shrink  height  10  px  or  10  ppt
+  bindsym  114  resize  grow    width   10  px  or  10  ppt
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $SUPER+r mode "resize"
+
+gaps inner 25
+gaps outer 0
+
+# second menu for plus and minus still not working!
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $SUPER+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+## SCREENSHOT ##
+# requires xclip
+
+bindsym Print          exec  scrot -m -e 'mv $f ~/pictures/screenshots'
+
+# MPD controls (requires mpc)
+bindsym  XF86AudioPlay  exec  mpc  toggle
+bindsym  XF86AudioNext  exec  mpc  next
+bindsym  XF86AudioPrev  exec  mpc  prev
+bindsym  XF86AudioStop  exec  mpc  stop
+
+## STARTUP OPTIONS ##
+
+exec_always --no-startup-id compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
+
+client.placeholder      #101010 #101010 #dddddd #101010
+
+bindsym $ALT+b exec $BROWSER
+bindsym $ALT+Shift+b exec $ALT_BROWSER
+bindsym $ALT+e exec $EDITOR # add period for current folder?
+
+# border rules
+# no borders or i3-gaps won't work
+for_window [class="^.*"] border pixel 0
+hide_edge_borders both
+smart_borders on
+
 # floating term
 exec --no-startup-id $term --name=dropdown
 for_window [instance="dropdown"] floating enable;
 for_window [instance="dropdown"] move scratchpad; [instance="dropdown"] scratchpad show; move scratchpad
 bindsym $mod+u    [instance="dropdown"] scratchpad show
 bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
+
+bindsym  $ALT+Escape        exec  $TERMINAL -e htop
+
+## WINDOW LOCATIONS ##
+#assign [class="Firefox"] $ws2
+
+#bar {
+#i3bar_command i3bar -t
+#status_command i3status
+#position top
+#tray_padding 0
+#}
