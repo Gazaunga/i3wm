@@ -174,3 +174,5 @@ scripter()
     chmod +x "$script"
     $EDITOR "$script"
 }
+
+. ~/bin/utils
