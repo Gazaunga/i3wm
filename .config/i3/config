@@ -305,7 +305,7 @@ bindsym  XF86AudioStop  exec  mpc  stop
 
 exec_always --no-startup-id compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
 
-client.placeholder      #101010 #101010 #dddddd #101010
+client.placeholder      #ffff00 #ffff00 #dddddd #ffff00
 
 bindsym $ALT+b exec $BROWSER
 bindsym $ALT+Shift+b exec $ALT_BROWSER
