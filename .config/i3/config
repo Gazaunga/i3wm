@@ -339,4 +339,7 @@ exec        --no-startup-id compton
 #status_command i3status
 #position top
 #tray_padding 0
+#workspace_buttons yes
+#separator_symbol ":|:"
+#strip_workspace_numbers yes
 #}
