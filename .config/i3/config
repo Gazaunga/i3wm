@@ -342,4 +342,15 @@ exec        --no-startup-id compton
 #workspace_buttons yes
 #separator_symbol ":|:"
 #strip_workspace_numbers yes
+#colors {
+#        background #303030
+#        statusline #dbdbdb
+#        separator #383838
+#
+#        focused_workspace  #a54242 #8c9440 #de935f
+#        active_workspace   #5f819d #85678f #5e8d87
+#        inactive_workspace #c0c0c0 #5f5f5f #cc6666
+#        urgent_workspace   #b5bd68 #f0c674 #81a2be
+#        binding_mode       #b294bb #8abeb7 #dbdbdb
+#    }
 #}
