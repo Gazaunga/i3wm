@@ -2,6 +2,8 @@
 
 require 'fileutils'
 
+DESTINATION = "#{Dir.home}/"
+
 apps = %w[
 
 ]
@@ -27,6 +29,6 @@ end
 grab_wallpaper
 grab_fonts
 make_spacemacs
-Dir.glob("#{Dir.home}/bsp/.", File::FNM_DOTMATCH).each { |f| FileUtils.cp_r("#{f}", DESTINATION, :verbose => true) }
+Dir.glob("#{Dir.home}/i3wm/.", File::FNM_DOTMATCH).each { |f| FileUtils.cp_r("#{f}", DESTINATION, :verbose => true) }
 
 #apps.each &install
