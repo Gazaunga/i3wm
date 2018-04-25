@@ -327,7 +327,8 @@ bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
 bindsym  $ALT+Escape        exec  $TERMINAL -e htop
 
 ## WINDOW LOCATIONS ##
-#assign [class="Firefox"] $ws2
+assign     [class="^([fF]irefox|[qQ]utebrowser)"]             $workspace2
+#assign [class="^[eE]macs"] $workspace3
 
 exec_always --no-startup-id ~/bin/polybar.sh
 exec        --no-startup-id xset r rate 280 40
