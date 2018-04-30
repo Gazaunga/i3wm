@@ -36,6 +36,10 @@ bindsym $ALT+Shift+Q kill
 # start a terminal
 bindsym  $ALT+Return    exec  $TERMINAL
 
+bindsym $ALT + l bash ~/bin/Lockscreen/lock
+
+bindsym $SUPER + w bash ~/bin/cw
+
 # start a program launcher
 bindsym $ALT+d exec j4-dmenu-desktop --dmenu="dmenu -i -fn 'fira-10' -l 10"
 bindsym $ALT+Shift+d exec bash ~/bin/rofi-apps
