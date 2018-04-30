@@ -124,53 +124,27 @@ bindsym $SUPER+y focus child
 
 ## WORKSPACE RULES ##
 
-#set $ws1 "&#xf120;"
-#set $ws2 "&#xf115;"
-#set $ws3 "&#xf269;"
-#set $ws4 "&#xf1bc;"
-#set $ws5 "&#xf1e2;"
+
 #http://fontawesome.io/cheatsheet/
 
 # ws names
-set $ws1 1:>_
-set $ws2 2:WWW
-set $ws3 3:FILE
-set $ws4 4:MEDIA
-set $ws5 V
-set $ws6 VI
-set $ws7 VII
-set $ws8 VIII
-set $ws9 IX
-set $ws10 X
+set $ws1 "&#xf120;"
+set $ws2 "&#xf115;"
+set $ws3 "&#xf269;"
+set $ws4 "&#xf1bc;"
+set $ws5 "&#xf1e2;"
+#set $ws5 V
+#set $ws6 VI
+#set $ws7 VII
+#set $ws8 VIII
+#set $ws9 IX
+#set $ws10 X
 
-# switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2;layout tabbed
-bindsym $mod+3 workspace $ws3;layout stacking
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
 
 # Go to workspace
-bindsym $ALT+1 workspace $ws1
-bindsym $ALT+2 workspace $ws2
-bindsym $ALT+3 workspace $ws3
+bindsym $ALT+1 workspace $ws1;layout floating
+bindsym $ALT+2 workspace $ws2;layout tabbed
+bindsym $ALT+3 workspace $ws3;layout stacking
 bindsym $ALT+4 workspace $ws4
 bindsym $ALT+5 workspace $ws5
 
@@ -303,8 +277,6 @@ bindsym  XF86AudioStop  exec  mpc  stop
 
 ## STARTUP OPTIONS ##
 
-exec_always --no-startup-id compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
-
 client.placeholder      #ffff00 #ffff00 #dddddd #ffff00
 
 bindsym $ALT+b exec $BROWSER
@@ -331,27 +303,27 @@ assign     [class="^([fF]irefox|[qQ]utebrowser)"]             $workspace2
 #assign [class="^[eE]macs"] $workspace3
 
 exec_always --no-startup-id ~/bin/polybar.sh
-exec        --no-startup-id xset r rate 280 40
-exec        --no-startup-id dunst
-exec        --no-startup-id compton
+exec_always        --no-startup-id xset r rate 280 40
+exec_always        --no-startup-id dunst
+exec_always --no-startup-id compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
 
-#bar {
-#i3bar_command i3bar -t
-#status_command i3status
-#position top
-#tray_padding 0
-#workspace_buttons yes
-#separator_symbol ":|:"
-#strip_workspace_numbers yes
-#colors {
-#        background #303030
-#        statusline #dbdbdb
-#        separator #383838
-#
-#        focused_workspace  #a54242 #8c9440 #de935f
-#        active_workspace   #5f819d #85678f #5e8d87
-#        inactive_workspace #c0c0c0 #5f5f5f #cc6666
-#        urgent_workspace   #b5bd68 #f0c674 #81a2be
-#        binding_mode       #b294bb #8abeb7 #dbdbdb
-#    }
-#}
+bar {
+i3bar_command i3bar -t
+status_command i3status
+position top
+tray_padding 0
+workspace_buttons yes
+separator_symbol ":|:"
+strip_workspace_numbers yes
+colors {
+        background #303030
+        statusline #dbdbdb
+        separator #383838
+
+        focused_workspace  #a54242 #8c9440 #de935f
+        active_workspace   #5f819d #85678f #5e8d87
+        inactive_workspace #c0c0c0 #5f5f5f #cc6666
+        urgent_workspace   #b5bd68 #f0c674 #81a2be
+        binding_mode       #b294bb #8abeb7 #dbdbdb
+    }
+}
