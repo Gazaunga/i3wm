@@ -7,6 +7,8 @@ if [[ $- != *i* ]]; then
   return
 fi
 
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
 shopt -s histappend
 PROMPT_COMMAND='history -a'
 HISTCONTROL=ignoredups:ignorespace
