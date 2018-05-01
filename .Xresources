@@ -37,8 +37,8 @@
 
 URxvt.intensityStyles: false
 URxvt.scrollBar: false
-! URxvt*font: xft:FiraSans-Black:size=8:antialias=true:hinting=true
-urxvt.font:	xft:hack:pixelsize=12:antialias=true
+! URxvt*font: xft:FiraSans-Black:size=8:antialias=true:hinting=true,-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
+URxvt.font:	xft:hack:pixelsize=12:antialias=true,-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
 URxvt.internalBorder: 15
 URxvt*depth: 32
 URxvt.allow_bold: true
