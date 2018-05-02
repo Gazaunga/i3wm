@@ -89,13 +89,11 @@ bindsym  $ALT+Shift+Down   move  down
 bindsym  $ALT+Shift+Up     move  up
 bindsym  $ALT+Shift+Right  move  right
 
-## Layout/Focus
-
 # split in horizontal orientation
-bindsym $SUPER+b split h
+bindsym $SUPER+b split h;exec notify-send "Tiling Horizontally"
 
 # split in vertical orientation
-bindsym $SUPER+v split v
+bindsym $SUPER+v split v;exec notify-send "Tiling Vertically"
 
 # Change container layout to stacked | tabbed | toggle split
 bindsym $SUPER+s layout stacking
