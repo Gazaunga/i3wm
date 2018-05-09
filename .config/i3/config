@@ -308,6 +308,7 @@ exec_always --no-startup-id ~/bin/polybar.sh
 exec_always        --no-startup-id xset r rate 280 40
 exec_always        --no-startup-id dunst
 exec_always --no-startup-id compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
+#xcompmgr -c -C -r5 -o.3 -l-8 -t-5 &
 
 bar {
 i3bar_command i3bar -t
