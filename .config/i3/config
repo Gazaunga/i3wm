@@ -141,6 +141,18 @@ set $ws5 "&#xf1e2;"
 #set $ws8 VIII
 #set $ws9 IX
 #set $ws10 X
+#set $workspace1 "&#xf120;"
+#set $workspace2 "&#xf269;"
+#set $workspace3 "&#xf16a;"
+#set $workspace4 "&#xf11b;"
+#set $workspace5 "&#xf1d7;"
+#set $workspace6 "&#xf15a;"
+#set $workspace7 "&#xf1fc;"
+#set $workspace8 "&#xf140;"
+#set $workspace9 "&#xf019;"
+#set $workspace10 "&#xf108;"
+
+
 
 
 # Go to workspace
