@@ -37,6 +37,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls -hBG'
 alias l.='ls -d .*'
+#alias l.="ls -A | egrep '^\.'" 
 alias fuck="sudo !!"
 alias glg='git log --graph --pretty=format":%C(yellow)%h%Cblue%d%Creset %s %C(white) %an,%ar%Creset" --abbrev-commit --decorate'
 alias glgh='git log --graph --pretty=format":%C(yellow)%h%Cblue%d%Creset %s %C(white) %an,%ar%Creset" --abbrev-commit --decorate | head'
