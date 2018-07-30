@@ -1,0 +1,77 @@
+#################
+# i3status config
+#################
+
+general {
+	colors             = true
+		color_good     = '#19e227'
+		color_degraded = '#dcb47a'
+		color_bad      = '#e89393'
+		interval       = 5
+		separator      = ''
+		markup         = "pango"
+}
+
+#order += "ipv6"
+order += "wireless _first_"
+#order += "battery all"
+order += "battery 0"
+#order += "load"
+#order += "cpu_usage"
+order += "disk /home"
+#order += "disk [SWAP]"
+order += "volume master"
+#order += "disk /"
+order += "tztime local"
+
+wireless _first_ {
+	format_up = " %quality  "
+		format_down = "  down  "
+}
+
+battery all {
+	format = "BAT: %status %percentage %remaining  "
+}
+
+battery 0 {
+	format = "%status %percentage %remaining %emptytime  "
+	format_down = "No battery!"
+	status_chr = " "
+	status_bat = "  "
+	status_unk = "  UNK!"
+	status_full = " "
+	path = "/sys/class/power_supply/BAT%d/uevent"
+	low_threshold = 10
+}
+
+tztime local {
+	format = " %d-%m-%Y    %H:%M "
+}
+
+load {
+	format = " %1min  "
+}
+
+cpu_usage {
+	format = " %usage  "
+}
+
+disk "/" {
+	format = " %avail  "
+}
+
+disk "/home" {
+	format = " %avail  "
+}
+
+volume master {
+	format = " %volume  "
+		format_muted = " %volume  "
+		device = "default"
+		mixer = "Master"
+		mixer_idx = 0
+}
+
+disk "[SWAP]" {
+	format = "SWAP: %free (%avail)/ %total  "
+}
