@@ -32,12 +32,15 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias src='source ~/.bashrc'
 alias free='free -mt'
-alias ll='ls -alF'
-alias la='ls -A'
+#alias ll='ls -alF'
+#alias la='ls -A'
 alias l='ls -CF'
-alias ls='ls -hBG'
+#alias ls='ls -hBG'
 alias l.='ls -d .*'
 #alias l.="ls -A | egrep '^\.'" 
+alias ls="ls --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -hFX"
+alias ll="ls -l --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -F"
+alias la="ls -la --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -F"
 alias fuck="sudo !!"
 alias glg='git log --graph --pretty=format":%C(yellow)%h%Cblue%d%Creset %s %C(white) %an,%ar%Creset" --abbrev-commit --decorate'
 alias glgh='git log --graph --pretty=format":%C(yellow)%h%Cblue%d%Creset %s %C(white) %an,%ar%Creset" --abbrev-commit --decorate | head'
