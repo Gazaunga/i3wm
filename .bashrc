@@ -49,6 +49,7 @@ alias gloh='git log --oneline --decorate | head'
 alias path='echo $PATH | tr -s ":" "\n"'
 alias mount='mount |column -t'
 alias mkdir="mkd"
+alias getip='grep -oE "\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b"'
 
 # View and set wallpaper with feh
 alias feh-view="feh --scale-down --auto-zoom"
