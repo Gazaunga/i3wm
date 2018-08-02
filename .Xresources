@@ -106,6 +106,17 @@ Xmessage*form.message.Scroll:      WhenNeeded
 !*imFont:                           xft:scientifica:regular:size=10
 *utf8Title:                        true
 
+!! Tabs
+URxvt.tabbed.tabbar-bg:  -1
+URxvt.tabbed.tabbar-fg:  -2
+URxvt.tabbed.tab-bg:     -2
+URxvt.tabbed.tab-fg:     -1
+URxvt.tabbed.title-bg:   -1
+URxvt.tabbed.title-fg:   -2
+URxvt.tabbed.autohide:   true
+URxvt.tabbed.new-button: false
+URxvt.tabbed.title:      true
+
 *xterm*metaSendsEscape:            true
 *xterm*renderFont:                 true
 *xterm*bellIsUrgent:               true
