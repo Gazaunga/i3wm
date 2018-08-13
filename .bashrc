@@ -59,6 +59,12 @@ alias feh-set="feh --bg-fill"
 # sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# bindings
+bind -r "\C-l" && bind "\C-l":clear-screen
+bind -r "\C-e" && bind "\C-e":end-of-line
+bind -r "\C-p" && bind "\C-p":history-search-backward
+bind -r "\C-n" && bind "\C-n":history-search-forward
+
 ## Functions
 function cd() {
     builtin cd $@ && ls
