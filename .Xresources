@@ -116,6 +116,8 @@ URxvt.tabbed.title-fg:   -2
 URxvt.tabbed.autohide:   true
 URxvt.tabbed.new-button: false
 URxvt.tabbed.title:      true
+URxvt*font: xft:Meslo LG L DZ:regular:size=10, \
+            -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
 
 *xterm*metaSendsEscape:            true
 *xterm*renderFont:                 true
