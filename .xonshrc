@@ -1,0 +1,12 @@
+# XONSH WIZARD START
+$AUTO_CD = '1'
+$AUTO_PUSHD = '1'
+$AUTO_SUGGEST = '1'
+$AUTO_SUGGEST_IN_COMPLETIONS = '1'
+$BOTTOM_TOOLBAR = 'false'
+$COMPLETIONS_MENU_ROWS = '2'
+$FOREIGN_ALIASES_OVERRIDE = '1'
+$VI_MODE = '1'
+$XONSH_AUTOPAIR = '1'
+xontrib load whole_word_jumping vox vox_tabcomplete xo xonda avox schedule
+# XONSH WIZARD END
