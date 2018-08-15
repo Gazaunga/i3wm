@@ -42,6 +42,7 @@ alias ls="ls --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=au
 alias ll="ls -l --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -F"
 alias la="ls -la --group-directories-first --time-style=+'%d.%m.%Y %H:%M' --color=auto -F"
 alias fuck="sudo !!"
+alias git-source='git config --get remote.origin.url'
 alias glg='git log --graph --pretty=format":%C(yellow)%h%Cblue%d%Creset %s %C(white) %an,%ar%Creset" --abbrev-commit --decorate'
 alias glgh='git log --graph --pretty=format":%C(yellow)%h%Cblue%d%Creset %s %C(white) %an,%ar%Creset" --abbrev-commit --decorate | head'
 alias glo='git log --oneline --decorate'
