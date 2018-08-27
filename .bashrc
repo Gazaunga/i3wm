@@ -60,6 +60,10 @@ alias feh-set="feh --bg-fill"
 # sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# requires installing tool "opting"
+## Use: optimize image.png
+alias optimize="optipng -o7 -f4 -strip all -quiet"
+
 # bindings
 bind -r "\C-l" && bind "\C-l":clear-screen
 bind -r "\C-e" && bind "\C-e":end-of-line
