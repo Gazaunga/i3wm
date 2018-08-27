@@ -2,9 +2,11 @@ xrandr --output VGA-1 --mode 1920x1080
 xsetroot -cursor_name left_ptr
 xset +fp ./.fonts/bitmap/
 xset fp rehash
+#xrandr -s 2880x1800
 xset s off
 xset -dpms
 xset r rate 200 60
+xrandr --dpi 220
 xmodmap -e 'clear Lock' #ensures you're not stuck in CAPS on mode
 xmodmap -e 'keycode 0x42=Escape' #remaps the keyboard so CAPS LOCK=ESC
 xrdb merge ./.Xresources
