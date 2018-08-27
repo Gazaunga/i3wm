@@ -9,19 +9,19 @@ apps = %w[
   ncmpcpp
   zsh
   dunst
-  i3-gaps-git
-  polybar-git
+  i3-gaps
+  polybar
   qutebrowser
   firefox
   rxvt-unicode
   emacs
   feh
   youtube-dl-git
-  i3lock-color
-  compton-git
+  i3lock
+  compton
   zathura
   zathura-pdf-mupdf
-  newsboat-git
+  kitty-git
 ]
 
 install = ->app{ `trizen -Syu --noconfirm #{app}` }
