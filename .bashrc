@@ -64,6 +64,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 ## Use: optimize image.png
 alias optimize="optipng -o7 -f4 -strip all -quiet"
 
+# faster bundle
+alias bundle3="bundle install -j3"
+
 # bindings
 bind -r "\C-l" && bind "\C-l":clear-screen
 bind -r "\C-e" && bind "\C-e":end-of-line
