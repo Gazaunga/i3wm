@@ -1,4 +1,4 @@
-export PS1="$(context-color -p)$PS1\[\e[0m\]"
+#export PS1="$(context-color -p)$PS1\[\e[0m\]"
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
