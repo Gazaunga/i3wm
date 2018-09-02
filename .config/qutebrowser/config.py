@@ -226,7 +226,7 @@ c.scrolling.smooth = False
 
 c.tabs.background = True
 c.tabs.padding = {'top': 4, 'bottom': 4, 'left': 4, 'right': 4}
-c.tabs.indicator_padding = {'top': 5, 'bottom': 5, 'left': 0, 'right': 4}
+c.tabs.indicator.padding = {'top': 5, 'bottom': 5, 'left': 0, 'right': 4}
 c.tabs.mousewheel_switching = False
 # c.tabs.close_mouse_button = 'middle'
 # c.tabs.favicons.scale = 1.0
