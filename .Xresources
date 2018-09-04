@@ -118,6 +118,17 @@ URxvt.tabbed.new-button: false
 URxvt.tabbed.title:      true
 URxvt*font: xft:Meslo LG L DZ:regular:size=10, \
             -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
+URxvt.cursorBlink: 1                                                                                                  
+URxvt.cursorUnderline: 0
+!URxvt.font: -*-px437 ibm iso8-*-*-*-*-16-*-*-*-*-*-*-*
+!URxvt.boldFont: -*-clean-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt.italicFont: -*-clean-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt.boldItalicFont: -*-clean-*-*-*-*-*-*-*-*-*-*-*-*
+URxvt.scrollBar: false
+!URxvt.geometry: 118x43
+URxvt.internalBorder: 16
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 *xterm*metaSendsEscape:            true
 *xterm*renderFont:                 true
