@@ -73,6 +73,22 @@ bind -r "\C-e" && bind "\C-e":end-of-line
 bind -r "\C-p" && bind "\C-p":history-search-backward
 bind -r "\C-n" && bind "\C-n":history-search-forward
 
+retry() {
+    if eval "$@"; then
+        return 0
+    fi
+
+    for i in 2 1; do
+        sleep 3s
+        echo "Retrying $i..."
+        if eval "$@"; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+
 ## Functions
 function cd() {
     builtin cd $@ && ls
