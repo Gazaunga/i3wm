@@ -15,7 +15,7 @@ set  $SUPER            Mod4
 ## ENVs ##
 
 set $TERMINAL xterm
-set $EDITOR emacsclient
+#set $EDITOR emacsclient
 set $SCRIPT_DIR $HOME/bin
 set $BROWSER qutebrowser
 set $ALT_BROWSER firefox
@@ -36,34 +36,13 @@ bindsym $ALT+Shift+Q kill
 # start a terminal
 bindsym  $ALT+Return    exec  $TERMINAL
 
-bindsym $ALT + l bash ~/bin/Lockscreen/lock
+#bindsym $ALT + l bash ~/bin/Lockscreen/lock
 
-bindsym $SUPER + w bash ~/bin/cw
+#bindsym $SUPER + w bash ~/bin/cw
 
 # start a program launcher
 bindsym $ALT+d exec j4-dmenu-desktop --dmenu="dmenu -i -fn 'fira-10' -l 10"
 bindsym $ALT+Shift+d exec bash ~/bin/rofi-apps
-
-# dropdown terminal
-bindsym $ALT+p exec tdrop -a -w 2144 -h 400 -x 8 -y 990 urxvt
-
-# emulate mouse (requires xdotool):
-bindsym  $SUPER+h            exec  --no-startup-id  xdotool   mousemove_relative  --         -20     0
-bindsym  $SUPER+j            exec  --no-startup-id  xdotool   mousemove_relative  0          20
-bindsym  $SUPER+k            exec  --no-startup-id  xdotool   mousemove_relative  --         0       -20
-bindsym  $SUPER+l            exec  --no-startup-id  xdotool   mousemove_relative  20         0
-bindsym  $SUPER+space        exec  --no-startup-id  xdotool   click               1          #       left    click
-bindsym  $CAPS+space       exec  --no-startup-id  xdotool   click               2          #       middle  click
-
-bindsym  $ALT+Shift+space  exec  --no-startup-id  xdotool   click               3          #       right   click
-
-# emulate pok3r:
-bindcode  --release  $CAPS+$DEAD_CIRCUMFLEX  exec  --no-startup-id  xdotool  key  `
-bindsym   --release  $CAPS+h                 exec  --no-startup-id  xdotool  key  Left
-bindsym   --release  $CAPS+j                 exec  --no-startup-id  xdotool  key  Down
-bindsym   --release  $CAPS+k                 exec  --no-startup-id  xdotool  key  Up
-bindsym   --release  $CAPS+l                 exec  --no-startup-id  xdotool  key  Right
-bindsym   --release  $CAPS+'                 exec  --no-startup-id  xdotool  key  Delete
 
 # change focus
 bindsym  $ALT+h  focus  left
@@ -112,21 +91,6 @@ bindsym $SUPER+a focus parent
 # focus the child container
 bindsym $SUPER+y focus child
 
-# mouse settings
-# The middle button over a titlebar kills the window
-# bindsym --release button2 kill
-
-# The right button toggles floating
-# bindsym button3 floating toggle
-# bindsym $ALT+button3 floating toggle
-
-# The side buttons move the window around
-# bindsym button9 move left
-# bindsym button8 move right
-
-## WORKSPACE RULES ##
-
-
 #http://fontawesome.io/cheatsheet/
 
 # ws names
@@ -135,30 +99,12 @@ set $ws2 "&#xf115;"
 set $ws3 "&#xf269;"
 set $ws4 "&#xf1bc;"
 set $ws5 "&#xf1e2;"
-#set $ws5 V
-#set $ws6 VI
-#set $ws7 VII
-#set $ws8 VIII
-#set $ws9 IX
-#set $ws10 X
-#set $workspace1 "&#xf120;"
-#set $workspace2 "&#xf269;"
-#set $workspace3 "&#xf16a;"
-#set $workspace4 "&#xf11b;"
-#set $workspace5 "&#xf1d7;"
-#set $workspace6 "&#xf15a;"
-#set $workspace7 "&#xf1fc;"
-#set $workspace8 "&#xf140;"
-#set $workspace9 "&#xf019;"
-#set $workspace10 "&#xf108;"
-
-
 
 
 # Go to workspace
-bindsym $ALT+1 workspace $ws1;layout floating
-bindsym $ALT+2 workspace $ws2;layout tabbed
-bindsym $ALT+3 workspace $ws3;layout stacking
+bindsym $ALT+1 workspace $ws1
+bindsym $ALT+2 workspace $ws2
+bindsym $ALT+3 workspace $ws3
 bindsym $ALT+4 workspace $ws4
 bindsym $ALT+5 workspace $ws5
 
@@ -168,19 +114,6 @@ bindsym $ALT+Shift+2 move container to workspace $ws2
 bindsym $ALT+Shift+3 move container to workspace $ws3
 bindsym $ALT+Shift+4 move container to workspace $ws4
 bindsym $ALT+Shift+5 move container to workspace $ws5
-
-#navigate workspaces next / previous
-bindsym $ALT+Ctrl+Right workspace next
-bindsym $ALT+Ctrl+Left workspace prev
-
-# orientation for new workspaces
-default_orientation horizontal
-
-#for_window [ workspace="1" ] floating enable
-#2
-#3
-#for_window [ workspace="4" ] # PUT IT IN MONOCLE/FULLSCREEN
-#5
 
 #Popups during fullscreen mode
 popup_during_fullscreen smart
@@ -202,12 +135,6 @@ bindsym $SUPER+Shift+R restart
 # exit i3 (logs you out of your X session)
 bindsym $ALT+ctrl+Delete exit
 
-# add shutdown
-
-# name workspace
-bindsym $SUPER+n exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
-
-bindsym $SUPER+Shift+e exec "i3-nagbar -t warning -m 'Power off:' -b 'Sleep (RAM)' 'exec sudo pm-suspend' -b 'Sleep (HDD)' 'exec sudo pm-hibernate' -b 'Exit i3' 'i3-msg exit' -b 'Reboot' 'exec reboot' -b 'Shutdown' 'exec sudo shutdown now'"
 
 ## MODES ##
 
@@ -295,7 +222,6 @@ client.placeholder      #ffff00 #ffff00 #dddddd #ffff00
 
 bindsym $ALT+b exec $BROWSER
 bindsym $ALT+Shift+b exec $ALT_BROWSER
-bindsym $ALT+e exec $EDITOR # add period for current folder?
 
 # border rules
 # no borders or i3-gaps won't work
@@ -303,24 +229,14 @@ for_window [class="^.*"] border pixel 0
 hide_edge_borders both
 smart_borders on
 
-# floating term
-exec --no-startup-id $term --name=dropdown
-for_window [instance="dropdown"] floating enable;
-for_window [instance="dropdown"] move scratchpad; [instance="dropdown"] scratchpad show; move scratchpad
-bindsym $mod+u    [instance="dropdown"] scratchpad show
-bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
 
 bindsym  $ALT+Escape        exec  $TERMINAL -e htop
 
 ## WINDOW LOCATIONS ##
-assign     [class="^([fF]irefox|[qQ]utebrowser)"]             $workspace2
-#assign [class="^[eE]macs"] $workspace3
+#assign     [class="^([fF]irefox|[qQ]utebrowser)"]             $workspace2
 
-#exec_always --no-startup-id ~/bin/polybar.sh
-#exec_always        --no-startup-id xset r rate 280 40
 exec_always        --no-startup-id dunst
 exec_always --no-startup-id compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
-#xcompmgr -c -C -r5 -o.3 -l-8 -t-5 &
 
 bar {
 i3bar_command i3bar -t
@@ -330,15 +246,4 @@ tray_padding 0
 workspace_buttons yes
 separator_symbol ":|:"
 strip_workspace_numbers yes
-#colors {
-#        background #303030
-#        statusline #dbdbdb
-#        separator #383838
-
-#        focused_workspace  #a54242 #8c9440 #de935f
-#        active_workspace   #5f819d #85678f #5e8d87
-#        inactive_workspace #c0c0c0 #5f5f5f #cc6666
-#        urgent_workspace   #b5bd68 #f0c674 #81a2be
-#        binding_mode       #b294bb #8abeb7 #dbdbdb
-#    }
 }
