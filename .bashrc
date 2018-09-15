@@ -66,6 +66,7 @@ alias optimize="optipng -o7 -f4 -strip all -quiet"
 
 # faster bundle
 alias bundle3="bundle install -j3"
+alias bundle_project="bundle install -j3 --path vendor/bundle"
 
 # bindings
 bind -r "\C-l" && bind "\C-l":clear-screen
