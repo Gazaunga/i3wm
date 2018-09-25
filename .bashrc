@@ -4,6 +4,12 @@
 # | |_) | (_| \__ \ | | | | | (__ 
 # |_.__/ \__,_|___/_| |_|_|  \___|
 
+if [[ $SSH_CLIENT ]]; then
+	PS1='🌐 [\w]\$ '
+else
+	PS1='💻 [\w]\$ '
+fi
+
 #export PS1="$(context-color -p)$PS1\[\e[0m\]"
 
 # Source global definitions
