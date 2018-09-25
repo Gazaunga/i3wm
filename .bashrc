@@ -15,7 +15,27 @@ shopt -s histappend
 PROMPT_COMMAND='history -a'
 HISTCONTROL=ignoredups:ignorespace
 
+# Auto-correct misspelled directories
+shopt -s dirspell direxpand
+
+# Check the window size after each command and, if necessary,
+# Update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# The pattern "**" used in a pathname expansion context will
+# Match all files and zero or more directories and subdirectories.
+shopt -s globstar
+
+# Extended pattern matching features are enabled
+shopt -s extglob
+
+# Include filenames beginning with a '.' in the results of pathname expansions
+shopt -s dotglob
+
+# Reclaim Ctrl-S and Ctrl-Q used for suspend/resume and use it for modern mapppings
+stty -hupcl -ixon -ixoff
+stty stop undef
+stty susp undef
 
 # xterm title:
 case "$TERM" in
