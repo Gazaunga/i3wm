@@ -94,6 +94,9 @@ bind -r "\C-e" && bind "\C-e":end-of-line
 bind -r "\C-p" && bind "\C-p":history-search-backward
 bind -r "\C-n" && bind "\C-n":history-search-forward
 
+cdls() { cd "$@" && ls; } # Combo command
+alias cd='cdls'
+
 retry() {
     if eval "$@"; then
         return 0
