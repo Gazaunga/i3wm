@@ -1,0 +1,64 @@
+conky.config = {
+    alignment = 'top_right',
+    background = false,
+    border_width = 0,
+    cpu_avg_samples = 2,
+    --default_color = 'black',
+    default_color = '#ffffff',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    default_graph_height = 50,
+    default_graph_width = 100,
+    draw_borders = false,
+    draw_graph_borders = false,
+    draw_outline = false,
+    draw_shades = false,
+    use_xft = true,
+    font = 'Roboto Mono Bold:size=12',
+    gap_x = 20,
+    gap_y = 60,
+    minimum_width = 20,
+    net_avg_samples = 2,
+    no_buffers = true,
+    double_buffer = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    extra_newline = false,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_class = 'Conky',
+    own_window_type = 'override',
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    stippled_borders = 0,
+    update_interval = 0.6,
+    uppercase = false,
+    use_spacer = 'none',
+    show_graph_scale = false,
+    show_graph_range = false,
+    --lua_load = 'conky_draw.lua',
+    --lua_draw_hook_pre = 'main'
+};
+
+conky.text = [[
+$kernel - $distribution
+$hr
+Battery: ${battery}
+Frequency:$color $freq_g GHz
+Tempature: ${acpitemp} °C
+GPU Usage: ${exec nvidia-smi | grep % | cut -c 62-63}%
+RAM Usage: $color $mem/$memmax - $memperc%
+${color #90d3ef}${memgraph #90d3ef #f0073a}$color
+Swap Usage:$color $swap/$swapmax - $swapperc%
+${color #90d3ef}${swapbar 13}$color
+CPU Usage:$color $cpu%
+${color #90d3ef}${cpugraph #90d3ef #f0073a}$color
+Processes:$color $processes  Running:$color $running_processes
+$hr
+File systems:
+ /: $color${fs_used /}/${fs_size /}
+ ${color #90d3ef}${fs_bar 13 /}$color
+ /home: ${fs_used /home}/${fs_size /home}
+ ${color #90d3ef}${fs_bar 13 /home}$color
+ HDD: $color${fs_used /diskette}/${fs_size /diskette}
+ ${color #90d3ef}${fs_bar 13 /diskette}$color
+]]
